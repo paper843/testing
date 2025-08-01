@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+<title>เพิ่มโครงการใหม่</title>
+<style>
+    body { padding: 2rem; }
+    .form-section { margin-bottom: 1.5rem; }
+  </style>
+<meta charset="utf-8"/>
+<title>ระบบติดตามโครงการ</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<meta content="width=device-width, initial-scale=1" name="viewport"/><link href="assets/css/styles_v7.css" rel="stylesheet"/></head>
+<body><div class="container"><nav class="main-nav">
+<a href="index.html">📊 Dashboard</a>
+<a href="farmer_list.html">👨‍🌾 รายชื่อเกษตรกร</a>
+<a href="projects.html">📁 โครงการทั้งหมด</a>
+<a href="data_entry.html">📝 กรอกข้อมูล</a>
+<a href="report_generator.html">📄 สร้างรายงาน</a>
+<a href="map.html">🗺️ แผนที่</a>
+</nav><h1 class="text-center">เพิ่มโครงการใหม่</h1><div style="text-align:right; margin-bottom:1rem;"><a class="button" href="index.html"><span class="icon">◀️</span> กลับ</a></div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+<div class="container-fluid">
+<button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+</div>
+</div>
+</nav>
+<h2>📝 เพิ่มโครงการใหม่</h2>
+<form onsubmit="handleSubmit(event)">
+<div class="form-section">
+<label class="form-label" for="projectName">ชื่อโครงการ</label>
+<input class="form-control" id="projectName" placeholder="เช่น โครงการปลูกผักอินทรีย์" required="" type="text"/>
+</div>
+<div class="form-section">
+<label class="form-label" for="province">จังหวัด</label>
+<select class="form-select" id="province" required="">
+<option value="">-- เลือกจังหวัด --</option>
+<option>นนทบุรี</option>
+<option>เชียงใหม่</option>
+<option>อุบลราชธานี</option>
+<option>ลพบุรี</option>
+<option>นครราชสีมา</option>
+<option>สุพรรณบุรี</option>
+<option>บุรีรัมย์</option>
+<option>กาญจนบุรี</option>
+</select>
+</div>
+<div class="form-section">
+<label class="form-label" for="status">สถานะโครงการ</label>
+<select class="form-select" id="status" required="">
+<option>ยังไม่เริ่ม</option>
+<option>กำลังดำเนินการ</option>
+<option>เสร็จสิ้น</option>
+</select>
+</div>
+<div class="form-section">
+<label class="form-label" for="objective">วัตถุประสงค์</label>
+<textarea class="form-control" id="objective" required="" rows="3"></textarea>
+</div>
+<div class="form-section">
+<label class="form-label" for="duration">ระยะเวลาดำเนินโครงการ</label>
+<input class="form-control" id="duration" placeholder="เช่น มกราคม 2566 – ธันวาคม 2566" required="" type="text"/>
+</div>
+<div class="form-section">
+<label class="form-label" for="activities">กิจกรรมหลัก</label>
+<textarea class="form-control" id="activities" required="" rows="3"></textarea>
+</div>
+<div class="form-section">
+<label class="form-label" for="results">ผลลัพธ์ที่คาดหวัง</label>
+<textarea class="form-control" id="results" rows="3"></textarea>
+</div>
+<button class="btn btn-success" type="submit">💾 บันทึกโครงการ</button>
+<a class="btn btn-secondary" href="projects.html">↩ กลับ</a>
+</form>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  alert("✅ โครงการถูกจำลองว่าบันทึกเรียบร้อยแล้ว!");
+  window.location.href = "projects.html";
+}
+</script>
+</div></body>
+</html>

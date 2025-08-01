@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>รายชื่อเกษตรกร</title>
+  <style>
+    :root {
+      --primary: #4CAF50;
+      --secondary: #2E7D32;
+      --background: #E8F5E9;
+      --accent: #A5D6A7;
+      --white: #ffffff;
+      --text: #1B5E20;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Noto Sans Thai', sans-serif;
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      border-bottom: 4px solid var(--primary);
+    }
+    nav {
+      background: var(--white);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0.8rem 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    nav a {
+      margin: 0.5rem;
+      color: var(--secondary);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    nav a:hover {
+      background: var(--accent);
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .card {
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2rem;
+    }
+    .card h2 {
+      margin-top: 0;
+      color: var(--secondary);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.8rem;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+    th {
+      background: var(--accent);
+    }
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: var(--secondary);
+    }
+    .badge {
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-weight: bold;
+      color: white;
+      font-size: 0.9rem;
+    }
+    .badge-warning { background-color: orange; }
+    .badge-success { background-color: seagreen; }
+    .badge-info { background-color: steelblue; }
+  </style>
+</head>
+<body>
+  <header>👨‍🌾 รายชื่อเกษตรกร</header>
+  <nav>
+    <a href="index.html">📊 Dashboard</a>
+    <a href="farmer_list.html">👨‍🌾 รายชื่อเกษตรกร</a>
+    <a href="projects.html">📁 โครงการทั้งหมด</a>
+    <a href="data_entry.html">📝 กรอกข้อมูล</a>
+    <a href="report_generator.html">📄 สร้างรายงาน</a>
+    <a href="map.html">🗺️ แผนที่</a>
+  </nav>
+  <div class="container">
+    <div class="card">
+      
+<h2>รายชื่อเกษตรกร</h2>
+<table>
+  <thead>
+    <tr><th>ชื่อ</th><th>จังหวัด</th><th>สถานะ</th><th>ข้อมูลเพิ่มเติม</th></tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>นายสมชาย ใจดี</td>
+      <td>ลำพูน</td>
+      <td><span class="badge badge-warning">ค้างชำระ</span></td>
+      <td><a href="profile_f01.html" class="btn">ดูโปรไฟล์</a></td>
+    </tr>
+    
+    <tr>
+      <td>นางสาวพรทิพย์ ดวงดี</td>
+      <td>เพชรบูรณ์</td>
+      <td><span class="badge badge-success">ชำระแล้ว</span></td>
+      <td><a href="profile_f02.html" class="btn">ดูโปรไฟล์</a></td>
+    </tr>
+    
+    <tr>
+      <td>นายวสันต์ ทองแท้</td>
+      <td>นครปฐม</td>
+      <td><span class="badge badge-info">อยู่ระหว่างดำเนินการ</span></td>
+      <td><a href="profile_f03.html" class="btn">ดูโปรไฟล์</a></td>
+    </tr>
+    
+    <tr>
+      <td>นายสมชาย ใจดี #4</td>
+      <td>จังหวัดตัวอย่าง</td>
+      <td><span class="badge badge-warning">ค้างชำระ</span></td>
+      <td><a href="profile_f04.html" class="btn">ดูโปรไฟล์</a></td>
+    </tr>
+    
+    <tr>
+      <td>นางสาวพรทิพย์ ดวงดี #5</td>
+      <td>จังหวัดตัวอย่าง</td>
+      <td><span class="badge badge-success">ชำระแล้ว</span></td>
+      <td><a href="profile_f05.html" class="btn">ดูโปรไฟล์</a></td>
+    </tr>
+    
+    <tr>
+      <td>นายวสันต์ ทองแท้ #6</td>
+      <td>จังหวัดตัวอย่าง</td>
+      <td><span class="badge badge-info">อยู่ระหว่างดำเนินการ</span></td>
+      <td><a href="profile_f06.html" class="btn">ดูโปรไฟล์</a></td>
+    </tr>
+    
+    <tr>
+      <td>นายสมชาย ใจดี #7</td>
+      <td>จังหวัดตัวอย่าง</td>
+      <td><span class="badge badge-warning">ค้างชำระ</span></td>
+      <td><a href="profile_f07.html" class="btn">ดูโปรไฟล์</a></td>
+    </tr>
+    
+    <tr>
+      <td>นางสาวพรทิพย์ ดวงดี #8</td>
+      <td>จังหวัดตัวอย่าง</td>
+      <td><span class="badge badge-success">ชำระแล้ว</span></td>
+      <td><a href="profile_f08.html" class="btn">ดูโปรไฟล์</a></td>
+    </tr>
+    
+    <tr>
+      <td>นายวสันต์ ทองแท้ #9</td>
+      <td>จังหวัดตัวอย่าง</td>
+      <td><span class="badge badge-info">อยู่ระหว่างดำเนินการ</span></td>
+      <td><a href="profile_f09.html" class="btn">ดูโปรไฟล์</a></td>
+    </tr>
+    
+    <tr>
+      <td>นายสมชาย ใจดี #10</td>
+      <td>จังหวัดตัวอย่าง</td>
+      <td><span class="badge badge-warning">ค้างชำระ</span></td>
+      <td><a href="profile_f10.html" class="btn">ดูโปรไฟล์</a></td>
+    </tr>
+    
+  </tbody>
+</table>
+
+    </div>
+  </div>
+</body>
+</html>

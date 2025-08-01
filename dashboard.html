@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+<title>🏠 หน้าหลัก - ภาพรวมโครงการและเกษตรกร</title>
+<style>
+    body { padding: 2rem; }
+    h2 { color: #0d6efd; margin-bottom: 1.5rem; }
+    .card { margin-bottom: 1.5rem; }
+    canvas { max-height: 320px; }
+  </style>
+<meta charset="utf-8"/>
+<title>ระบบติดตามโครงการ</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<meta content="width=device-width, initial-scale=1" name="viewport"/><link href="assets/css/styles_v7.css" rel="stylesheet"/></head>
+<body><div class="container"><nav class="main-nav">
+<a href="index.html">📊 Dashboard</a>
+<a href="farmer_list.html">👨‍🌾 รายชื่อเกษตรกร</a>
+<a href="projects.html">📁 โครงการทั้งหมด</a>
+<a href="data_entry.html">📝 กรอกข้อมูล</a>
+<a href="report_generator.html">📄 สร้างรายงาน</a>
+<a href="map.html">🗺️ แผนที่</a>
+</nav><h1 class="text-center">🏠 หน้าหลัก - ภาพรวมโครงการและเกษตรกร</h1><div style="text-align:right; margin-bottom:1rem;"><a class="button" href="index.html"><span class="icon">◀️</span> กลับ</a></div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+<div class="container-fluid">
+<button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+</div>
+</div>
+</nav>
+<h2>🏠 หน้าหลัก ภาพรวม</h2>
+<div class="row">
+<div class="col-md-6">
+<div class="card p-3 shadow-sm">
+<h5>สัดส่วนสถานะโครงการ</h5>
+<canvas id="statusChart"></canvas>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card p-3 shadow-sm">
+<h5>จำนวนเกษตรกรตามจังหวัด</h5>
+<canvas id="provinceChart"></canvas>
+</div>
+</div>
+<div class="col-md-12">
+<div class="card p-3 shadow-sm">
+<h5>แนวโน้มการชำระหนี้ตามเวลา</h5>
+<canvas id="trendChart"></canvas>
+</div>
+</div>
+</div>
+<script>
+    const statusCtx = document.getElementById('statusChart');
+    new Chart(statusCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['ยังไม่เริ่ม', 'กำลังดำเนินการ', 'เสร็จสิ้น'],
+        datasets: [{
+          data: [8, 12, 20],
+          backgroundColor: ['#f39c12', '#3498db', '#2ecc71']
+        }]
+      }
+    });
+
+    const provinceCtx = document.getElementById('provinceChart');
+    new Chart(provinceCtx, {
+      type: 'bar',
+      data: {
+        labels: ['นนทบุรี', 'เชียงใหม่', 'อุบลฯ', 'ลพบุรี', 'นครราชสีมา'],
+        datasets: [{
+          label: 'จำนวนเกษตรกร',
+          data: [15, 22, 18, 9, 14],
+          backgroundColor: '#0d6efd'
+        }]
+      }
+    });
+
+    const trendCtx = document.getElementById('trendChart');
+    new Chart(trendCtx, {
+      type: 'line',
+      data: {
+        labels: ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.'],
+        datasets: [{
+          label: 'จำนวนผู้ชำระหนี้',
+          data: [5, 9, 15, 20, 30],
+          borderColor: '#2ecc71',
+          fill: false,
+          tension: 0.3
+        }]
+      }
+    });
+  </script>
+</div></body>
+</html>

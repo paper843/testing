@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard ระบบติดตามเกษตรกร</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #E8F5E9;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.1em;
+      color: #555;
+    }
+    .card .value {
+      font-size: 2em;
+      font-weight: bold;
+      color: #4CAF50;
+    }
+    .chart-container {
+      margin-top: 40px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📊 Dashboard ระบบติดตามเกษตรกรลูกหนี้</h1>
+  
+</header>
+<nav class="navbar">
+  <a href="index.html">📊 Dashboard</a>
+  <a href="farmer_list.html">👨‍🌾 รายชื่อเกษตรกร</a>
+  <a href="projects.html">📁 โครงการทั้งหมด</a>
+  <a href="data_entry_followup.html">📝 กรอกข้อมูล</a>
+  <a href="report_generator.html">📄 สร้างรายงาน</a>
+  <a href="map.html">🗺️ แผนที่</a>
+</nav>
+<style>
+  .navbar {
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0;
+    gap: 20px;
+  }
+  .navbar a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: background 0.2s;
+  }
+  .navbar a:hover {
+    background-color: #C8E6C9;
+    border-radius: 6px;
+  }
+</style>
+
+  <div class="container">
+    <div class="grid">
+      <div class="card">
+        <h3>จำนวนเกษตรกรทั้งหมด</h3>
+        <div class="value">1,250 ราย</div>
+      </div>
+      <div class="card">
+        <h3>โครงการที่ดำเนินการ</h3>
+        <div class="value">18 โครงการ</div>
+      </div>
+      <div class="card">
+        <h3>เกษตรกรที่ชำระหนี้แล้ว</h3>
+        <div class="value">890 ราย</div>
+      </div>
+      <div class="card">
+        <h3>ค้างชำระ</h3>
+        <div class="value" style="color: #e74c3c;">360 ราย</div>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <h3>แนวโน้มการชำระหนี้รายเดือน</h3>
+      <canvas id="lineChart"></canvas>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('lineChart').getContext('2d');
+    const lineChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.'],
+        datasets: [{
+          label: 'จำนวนที่ชำระหนี้',
+          data: [120, 160, 180, 200, 230, 250],
+          borderColor: '#4CAF50',
+          fill: false,
+          tension: 0.2
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
